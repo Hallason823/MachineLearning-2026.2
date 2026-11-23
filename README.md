@@ -22,7 +22,7 @@ Notebooks run end to end on Google Colab (Runtime > Run all).
 ## Structure
 
 ```text
-├── data/
+├── datas/
 │   ├── raw/          original datasets, unmodified
 │   └── processed/    cleaned datasets, data dictionary
 ├── notebooks/        regression and classification
