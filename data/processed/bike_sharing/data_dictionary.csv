@@ -1,0 +1,19 @@
+column,type,meaning,unit,transformation
+date,datetime,Date of the record,,Converted from text to datetime
+season,int,"1 winter, 2 spring, 3 summer, 4 fall",,
+year,int,"0 for 2011, 1 for 2012",,Renamed from yr
+month,int,"Month of the year, 1 to 12",,Renamed from mnth
+hour,int,"Hour of the day, 0 to 23",,Renamed from hr
+holiday,int,"1 if the day is a holiday, otherwise 0",,
+weekday,int,"Day of the week, 0 to 6",,
+working_day,int,"1 if the day is neither weekend nor holiday, otherwise 0",,Renamed from workingday
+weather_situation,int,"Weather condition, from 1 (clear) to 4 (heavy rain, snow or fog)",,Renamed from weathersit
+temperature,float,"Normalized temperature, min-max scaled from -8 to +39 C",,Renamed from temp
+apparent_temperature,float,"Normalized feeling temperature, min-max scaled from -16 to +50 C",,Renamed from atemp
+humidity,float,"Normalized relative humidity, divided by 100",,Renamed from hum
+wind_speed,float,"Normalized wind speed, divided by 67",,Renamed from windspeed
+total_rentals,int,"Target, total rental bikes in the hour",bikes per hour,Renamed from cnt
+hour_sin,float,"Sine of the hour in a 24 hour cycle, from -1 to 1",,Created from hour
+hour_cos,float,"Cosine of the hour in a 24 hour cycle, from -1 to 1",,Created from hour
+month_sin,float,"Sine of the month in a 12 month cycle, from -1 to 1",,Created from month
+month_cos,float,"Cosine of the month in a 12 month cycle, from -1 to 1",,Created from month
