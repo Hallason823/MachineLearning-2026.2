@@ -1,0 +1,21 @@
+coluna,tipo_pandas,significado,unidade,transformacao_etl
+gender,str,Gênero do cliente (Male / Female),categoria,Nomes padronizados para snake_case
+seniorcitizen,int64,"Indica se o cliente é idoso (0 = não, 1 = sim)",indicador (0/1),Nome padronizado para snake_case
+partner,str,Possui parceiro(a) (Yes / No),categoria,Nome padronizado para snake_case
+dependents,str,Possui dependentes (Yes / No),categoria,Nome padronizado para snake_case
+tenure,int64,Tempo de permanência do cliente com a empresa,meses,Nome padronizado para snake_case
+phoneservice,str,Possui serviço de telefonia (Yes / No),categoria,Nome padronizado para snake_case
+multiplelines,str,Possui múltiplas linhas telefônicas,categoria,Nome padronizado para snake_case
+internetservice,str,"Tipo de serviço de internet (DSL, Fiber optic, No)",categoria,Nome padronizado para snake_case
+onlinesecurity,str,Possui segurança online,categoria,Nome padronizado para snake_case
+onlinebackup,str,Possui backup online,categoria,Nome padronizado para snake_case
+deviceprotection,str,Possui proteção de dispositivo,categoria,Nome padronizado para snake_case
+techsupport,str,Possui suporte técnico,categoria,Nome padronizado para snake_case
+streamingtv,str,Possui streaming de TV,categoria,Nome padronizado para snake_case
+streamingmovies,str,Possui streaming de filmes,categoria,Nome padronizado para snake_case
+contract,str,"Tipo de contrato (Month-to-month, One year, Two year)",categoria,Nome padronizado para snake_case
+paperlessbilling,str,Utiliza fatura digital sem papel (Yes / No),categoria,Nome padronizado para snake_case
+paymentmethod,str,Forma de pagamento,categoria,Nome padronizado para snake_case
+monthlycharges,float64,Valor cobrado mensalmente do cliente,unidade monetária (USD),Nome padronizado para snake_case
+totalcharges,float64,Valor total cobrado acumulado do cliente,unidade monetária (USD),Convertido para numérico; espaços em branco viraram NaN
+churn,int64,"Alvo: cliente cancelou o serviço (1 = Yes, 0 = No)",binário (0/1),Mapeado de No/Yes para 0/1 e padronizado para minúscula
