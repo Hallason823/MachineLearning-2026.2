@@ -1,0 +1,41 @@
+{
+  "author": "Arthur Azevedo Costa de Paula",
+  "front": "Classification - Telco Customer Churn",
+  "notebook": "notebooks/02_classification.ipynb",
+  "ai_tool": "Gemini",
+  "prompts": [
+    {
+      "step": "ETL",
+      "checklist_items": [
+        "Download dataset to data/raw (adapted from checklist item)",
+        "Record source, access date and original size",
+        "Convert TotalCharges to numeric, with blanks as missing",
+        "Remove customerID",
+        "Convert Churn to 0 and 1",
+        "Standardize column names and categories",
+        "Check duplicates and missing values",
+        "Save the clean data to data/processed",
+        "Write the data dictionary (column, type, meaning, unit, transformation)"
+      ],
+      "literal_prompt": "Can you help me organize the python ETL steps for the telco churn dataset? I need to log the source, access date and size, turn TotalCharges into numeric keeping blanks as missing, drop customerID, map Churn to 0 and 1, standardize column names and categories, check duplicates and missing values, save the cleaned data to data/processed, and build a data dictionary with column, type, meaning, unit and transformation.",
+      "discarded_or_corrected": "I spotted the generic hour.csv item right in the Trello checklist, checked the official Telco Customer Churn documentation for the real dataset structure and fields, and adjusted the paths and column logic accordingly; I also avoided filling TotalCharges blanks upfront during ETL so nothing leaks before splitting train and test.",
+      "validation": "ran from scratch in colab, checked dimensions (7043 rows and 20 columns after removing customerID), verified Churn encoding, column standardization, saved files, and data dictionary"
+    },
+    {
+      "step": "Data quality log",
+      "checklist_items": [
+        "TotalCharges read as text, with blanks",
+        "customerID without predictive value",
+        "Minority positive class (class imbalance)",
+        "Redundant categories such as \"No internet service\"",
+        "Look for other problems (duplicates, outliers, redundant columns)",
+        "Log each problem with evidence and decision",
+        "Measure the metric before and after the fix for at least 1 problem"
+      ],
+      "literal_prompt": "can you give me a hand structuring the data quality checks for telco churn? I want to cover TotalCharges coming in as text with blanks, customerID having no predictive value, Churn class imbalance, redundant categories like No internet service, plus checking for duplicates, outliers and redundant columns, logging evidence and decisions for each one, and comparing metrics before and after a fix.",
+      "discarded_or_corrected": "I pushed back on dropping or filling missing values right away before splitting data, and adjusted the duplicate check to ignore customerID so I could catch the actual 22 duplicate feature rows.",
+      "validation": "checked the 11 blank TotalCharges cases, customerID, class imbalance, redundant categories, 22 duplicate rows, logged evidence and decisions, and verified before/after metrics in colab"
+    }
+  ],
+  "reflection": "Using AI helped me get the boilerplate structure for the ETL steps, data dictionary, and quality checks moving faster, especially when organizing everything against my Trello checklist. At the same time, it still leans on generic assumptions if you don't watch closely—so I cross-checked the official Telco dataset docs, caught the template mismatch early in Trello, and kept missing/duplicate handling grounded in the actual data instead of taking shortcuts."
+}
